@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>列表与下拉菜单</title>
+<style type="text/css">
+	body{
+		margin: 60px;
+		font-size: 16px;
+	}
+	input{
+		width: 200px;
+		height: 22px;
+		border: 1px solid #CCC;
+	}
+	input:focus{
+		border:1px solid #F00;
+		background-color: #FFC;
+		color: #F00;
+	}
+	p{
+		width：300px;height:100%;line-height:18px;margine:80px auto;font-size:18px;text-align:center;
+	}
+	.p2{
+		width：300px;height:100%;line-height:18px;margine:80px auto;font-size:18px;text-align:center;
+	}
+	h2{
+		text-align: center;
+		letter-spacing: 3px;
+	}
+</style>
+</head>
+
+<body>
+<!__如果不是一个有效的Email地址，输入框不允许提交__>
+<form action="demo.php" method="get" name="FomeDemo">   
+
+<!__预置的用户名__><table>
+<datalist id="UserNameInfo">                   
+<option value="薛忠良" lable="UserName"></option>
+<option value="李思函" lable="UserName"></option>
+<option value="王凯博" lable="UserName"></option>
+<option value="王育"   lable="UserName"></option>
+<option value="李雪松" lable="UserName"></option>
+<option value="佩奇一代" lable="UserName"></option>
+<option value="乔治二代" lable="UserName"></option>
+</datalist>
+
+<!__部分信息属性为required__>
+<h2>用户注册</h2>
+<p>用户名称：<input type="text" name="UserName" id="UserName" list="UserNameInfo" required placeholder="必填">
+<p>用户密码：<input type="password" name="UserPWD" width="30" placeholder="包含数字、字母和'_'" required placeholder="必填">
+<p>重复密码：<input type="password" name="ReUserPWD" width="30" placeholder="两次密码必须一致" required placeholder="必填"> 
+<p>电子邮箱：<input type="email" name="AddressEmail" width="30" required placeholder="输入常用邮箱">
+<p>联系号码：<input type="tel" name="telphoneNum" width="30" placeholder="选填">
+<p>出生日期：<input type="date" name="date1">
+
+<!__预置的可选地区__>
+<p>所在地区：
+  <{% select name="Area" size="1" width="30"%}>
+  <optgroup lable="________中国________">
+  <option value="Beijing">北京</option>
+  <option value="Beijing">陕西</option>
+  <option value="Shanghai">上海</option>
+  <option value="Henan">河南</option>
+  <option value="Hebei">河北</option>
+  <option value="Hunan">湖南</option>
+  <option value="Hunan">天津</option>
+  <option value="Hunan">重庆</option>
+  <option value="Hunan">山西</option>
+  <option value="Hunan">辽宁</option>
+  <option value="Hunan">吉林</option>
+  <option value="Hunan">黑龙江</option>
+  <option value="Hunan">江苏</option>
+  <option value="Hunan">浙江</option>
+  <option value="Hunan">安徽</option>
+  <option value="Hunan">福建</option>
+  <option value="Hunan">江西</option>
+  <option value="Hunan">山东</option>
+  <option value="Hunan">河北</option>
+  <option value="Hunan">湖北</option>
+  <option value="Hunan">广东</option>
+  <option value="Hunan">海南</option>
+  <option value="Hunan">四川</option>
+  <option value="Hunan">贵州</option>
+  <option value="Hunan">云南</option>
+  <option value="Hunan">台湾</option>
+  <option value="Hunan">内蒙古自治区</option>
+  <option value="Hunan">广西壮族自治区</option>
+  <option value="Hunan">西藏自治区</option>
+  <option value="Hunan">宁夏回族自治区</option>
+  <option value="Hunan">新疆</option>
+  <option value="Hunan">香港特别行政区</option>
+  <option value="Hunan">澳门特别行政区</option>
+  </optgroup>
+  </seclect>
+  </p>
+  <table>
+  <p>全部重置：<input type="reset" name="Reset"  value="全部重置">
+  <p>申请注册：<input type="submit" name="Submit" value="注册">
+  </table>
+
+</form>
+</body>
+</html>

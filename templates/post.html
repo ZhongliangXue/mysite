@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }}</title>
+</head>
+<body>
+<h2 align="center">{{ post.title }}</h2>
+<span align = "center">
+    <p>{{ post.content|linebreaksbr}}</p>
+    <br/>
+<hr>
+<table boder="6px" width="40%" align="center">
+
+    <tr>
+        <td>发表信息：</td>
+        <td>作者：{{ post.writer }}</td>
+        <td>日期：{{ post.pub_time }}</td>
+    <tr/>
+</table>
+    <hr>
+    <table boder="6px" width="40%" align="center">
+    <tr>
+        <th>评价：{{ post.comment }}</th>
+    </tr>
+<br/>
+</table>
+</span>
+
+<!__评论部分begin__>
+<form action="/sub_comment/" method="post">
+    {% csrf_token %}
+    <textarea cols="80" rows="3" name="comment_content"></textarea>
+    <input type="hidden" name="post_id" value="{{ post_obj.id }}"/>
+    <input type="submit" value="添加评论" id="id_content"/>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>论坛页面</title>
+    <style type="text/css">
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1 align="center">帖子列表
+</h1>
+<table boder="6px" width="80%" align="center">
+<tr>
+    <th>帖子标题</th>
+    <th>帖主</th>
+    <th>发表时间</th>
+    <th>帖子概要</th>
+    <th>浏览次数</th>
+    <th>获得点赞</th>
+</tr>
+{% for post in posts %}
+
+<tr>
+    <td width="233" height="68"><a href="{{ post.id }}">{{ post.title }}</a></td>
+    <td>{{ post.writer }}</td>
+    <td>{{ post.pub_time }}</td>
+    <td>{{ post.summary }}</td>
+<td>{{ post.view_account }}</td>
+<td>{{ post.flowers }}</td>
+
+</tr>
+
+{% endfor %}
+</table>
+</body>
+</html>
